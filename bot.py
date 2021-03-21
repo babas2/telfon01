@@ -1,5 +1,6 @@
-# (c) 2021-22 < @xditya >
-# < @BotzHub >
+# BABAS #
+
+# REPONU ƏKƏN ŞƏRƏFSİZDİ OĞRAŞDI #
 
 import logging
 import asyncio
@@ -10,7 +11,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', level=logging.WARNING)
 
 # start the bot
-print("Starting...")
+print("Başlanılır...")
 try:
     apiid = config("APP_ID", cast=int)
     apihash = config("API_HASH")
@@ -18,17 +19,17 @@ try:
     FRWD_CHANNEL = config("FRWD_CHANNEL", cast=int)
     BotzHub = TelegramClient('BotzHub', apiid, apihash).start(bot_token=bottoken)
 except:
-    print("Environment vars are missing! Kindly recheck.")
-    print("Bot is quiting...")
+    print("Ləvazımatlar tam deyil!")
+    print("Bot söndürülür...")
     exit()
 
 @BotzHub.on(events.NewMessage(pattern="/start", func=lambda e: e.is_private))
 async def _(event):
     ok = await BotzHub(GetFullUserRequest(event.sender_id))
-    await event.reply(f"Hello {ok.user.first_name}! \nI'm a view-counter bot.\nSend me a message and I'll attach a view count to it!",
+    await event.reply(f"Salam {ok.user.first_name}! \nMən **Canlı Söhbət** botuyam.\nMənə bir mesaj göndər və məndə o mesajı saniyəsində aşağıdakı Kanal'a göndərəcəm!!",
                     buttons=[
-                        [Button.url("Dev.", url="https://t.me/BotzHub"),
-                        Button.url("Repository", url="https://github.com/xditya/ViewCountBot")]
+                        [Button.url("🤖 Sahibim", url="https://t.me/c9ala"),
+                        Button.url("🗣️ Kanal", url="https://t.me/sohbetcanli")]
                     ])
 
 @BotzHub.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
@@ -38,6 +39,5 @@ async def countit(event):
     x = await event.forward_to(FRWD_CHANNEL)
     await x.forward_to(event.chat_id)
 
-print("Bot has started.")
-print("Do visit @BotzHub..")
+print("bot başladı")
 BotzHub.run_until_disconnected()
