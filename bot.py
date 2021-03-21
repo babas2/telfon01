@@ -32,6 +32,22 @@ async def _(event):
                         Button.url("🗣️ Kanal", url="https://t.me/sohbetcanli")]
                     ])
 
+@BotzHub.on(events.NewMessage(pattern="/help", func=lambda e: e.is_private))
+async def _(event):
+    ok = await BotzHub(GetFullUserRequest(event.sender_id))
+    await event.reply(f"{ok.user.first_name} kömək menyusuna xoş gəldin!\n\n🤖 Bot haqqında qısaca məlumat:\nSən mənə istədiyin bir mesajı yazırsan məndə həmin saniyə o mesajı @SohbetCanli kanalına yönləndirirəm! Sənin mesajını görən insanlarda bot vaistəsi ilə sənə cavab verəcək.\n\nTəklif və Şikayətlər üçün /feedback yaza bilərsiz.",
+                    buttons=[
+                        Button.url("🗣️ Kanal", url="https://t.me/sohbetcanli")
+                    ])
+
+@BotzHub.on(events.NewMessage(pattern="/feedback", func=lambda e: e.is_private))
+async def _(event):
+    ok = await BotzHub(GetFullUserRequest(event.sender_id))
+    await event.reply(f"Təklif və Şikayətlər üçün aşağıdakı bot butona basıb mənə yaza bilərsiz.",
+                    buttons=[
+                        Button.url("🤖 Sahib", url="https://t.me/c9ala")
+                    ])
+
 @BotzHub.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 async def countit(event):
     if event.text.startswith('/'):
