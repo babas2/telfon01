@@ -1,5 +1,5 @@
 {
-    "name": "View Count Bot",
+    "name": "çalışıyo mu diye",
     "description": "Telethon bot to add view counts to a message.",
     "logo": "",
     "keywords": [
@@ -14,11 +14,11 @@
     "env": {
         "API_HASH": {
             "description": "You API HASH from my.telegram.org",
-            "value": ""
+            "value": "ec0ae6e668e4eaa669c536acf13c9f59"
         },
         "APP_ID": {
             "description": "You API ID from my.telegram.org",
-            "value": ""
+            "value": "1225523"
         },
         "BOT_TOKEN": {
             "description": "Bot token, get it from @BotFather.",
@@ -26,7 +26,7 @@
         },
         "FRWD_CHANNEL": {
             "description": "Add your bot to a channel and paste the Channel ID here.",
-            "value": ""
+            "value": "1229172895"
         }
     },
     "buildpacks": [
