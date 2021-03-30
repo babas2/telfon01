@@ -30,7 +30,7 @@ async def _(event):
                     buttons=[
                         [Button.url("🤖 Sahibim", url="https://t.me/c9ala"),
                         Button.url("🗣️ Kanal", url="https://t.me/elanver")
-                    ])
+                    ]])
 
 @BotzHub.on(events.NewMessage(pattern="/help", func=lambda e: e.is_private))
 async def _(event):
