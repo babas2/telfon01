@@ -35,7 +35,7 @@ async def _(event):
 @BotzHub.on(events.NewMessage(pattern="/help", func=lambda e: e.is_private))
 async def _(event):
     ok = await BotzHub(GetFullUserRequest(event.sender_id))
-    await event.reply(f"{ok.user.first_name} kömək menyusuna xoş gəldin!\n\n🤖 Bot haqqında qısaca məlumat:\nSən mənə satmaq istədiyin şeyin şəklini (qrup, kanal, əşya və s.) göndərirsən və məndə onu avtomatik @ElanVer kanalına yönləndirirəm.\n\n**VACİB**:\n1 - Elanını paylaşarkən onun haqqında tam məlumat verməyi unutma (ünvan, qiymət, əlaqə və s.)\n2 - 18+ ,qanunsuz, qeyri-etik elanlar paylaşmaq qadağandır.\n\n✍️ Qeyd: Elan paylaşılarkən kim tərəfindən göndərildiyi kanalda göstərilir, yəniki nələr paylaşdığın sənin "tərbiyyəndən" aslıdır :)",
+    await event.reply(f"{ok.user.first_name} kömək menyusuna xoş gəldin!\n\n🤖 Bot haqqında qısaca məlumat:\nSən mənə satmaq istədiyin şeyin şəklini (qrup, kanal, əşya və s.) göndərirsən və məndə onu avtomatik @ElanVer kanalına yönləndirirəm.\n\n**VACİB**:\n1 - Elanını paylaşarkən onun haqqında tam məlumat verməyi unutma (ünvan, qiymət, əlaqə və s.)\n2 - 18+ ,qanunsuz, qeyri-etik elanlar paylaşmaq qadağandır.\n\n✍️ Qeyd: Elan paylaşılarkən kim tərəfindən göndərildiyi kanalda göstərilir, yəniki nələr paylaşdığın sənin __tərbiyyəndən__ aslıdır ;)",
                     buttons=[
                         Button.url("🗣️ Kanal", url="https://t.me/sohbetcanli")
                     ])
